@@ -1,0 +1,11 @@
+.small {
+  max-width: 110px;
+}
+
+.medium {
+  min-width: 180px;
+}
+
+.large {
+  min-width: 240px;
+}

@@ -1,8 +1,8 @@
 import Button from "./Button";
 import Input from "./Input";
-import "../styles/ContactInfoForm.css";
+import "../styles/EducationForm.css";
 
-export default function ContactInfoForm({}) {
+export default function EducationForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Submit button clicked!");
@@ -15,27 +15,33 @@ export default function ContactInfoForm({}) {
 
   return (
     <>
-      <form id="contactInfo">
+      <form id="education">
         <Input
           type="text"
-          label="Name: "
-          id="name"
-          autoComplete="name"
+          label="School: "
+          id="school"
+          autoComplete="off"
           classes="medium"
         />
         <Input
-          type="email"
-          label="Email: "
-          id="email"
-          autoComplete="email"
-          classes="large"
+          type="text"
+          label="Degree: "
+          id="degree"
+          autoComplete="off"
+          classes="medium"
         />
         <Input
-          type="tel"
-          label="Phone number: "
-          id="tel"
-          autoComplete="tel"
+          type="text"
+          label="Field of study: "
+          id="fieldOfStudy"
+          autoComplete="off"
           classes="small"
+        />
+        <Input
+          type="date"
+          label="End date: "
+          id="studyEndDate"
+          autocomplete="off"
         />
         <Button label="Submit" onClick={handleSubmit} />
         <Button label="Edit" onClick={handleEdit} />
