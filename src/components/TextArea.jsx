@@ -1,4 +1,4 @@
-export default function TextArea({ label, id, autoComplete, classes }) {
+export default function TextArea({ label, id, autoComplete, classes, name }) {
   return (
     <div>
       <label htmlFor={id}>{label}</label>
@@ -6,7 +6,7 @@ export default function TextArea({ label, id, autoComplete, classes }) {
       <textarea
         id={id}
         autoComplete={autoComplete}
-        name={id}
+        name={name}
         className={classes}
       />
     </div>

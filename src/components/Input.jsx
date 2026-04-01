@@ -1,4 +1,13 @@
-export default function Input({ type, label, id, autoComplete, classes }) {
+export default function Input({
+  type,
+  label,
+  id,
+  name,
+  autoComplete,
+  classes,
+  value,
+  onChange,
+}) {
   return (
     <div>
       <label htmlFor={id}>{label}</label>
@@ -6,8 +15,10 @@ export default function Input({ type, label, id, autoComplete, classes }) {
         type={type}
         id={id}
         autoComplete={autoComplete}
-        name={id}
+        name={name}
         className={classes}
+        value={value}
+        onChange={onChange}
       />
     </div>
   );

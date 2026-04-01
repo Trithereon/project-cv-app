@@ -4,6 +4,8 @@ import "../styles/EducationForm.css";
 import { useId } from "react";
 
 export default function EducationForm() {
+  const id = useId();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Submit button clicked!");
@@ -20,34 +22,36 @@ export default function EducationForm() {
         <Input
           type="text"
           label="School: "
-          id=""
+          id={"school" + id}
           autoComplete="off"
           classes="medium"
         />
         <Input
           type="text"
           label="Degree: "
-          id="degree"
+          id={"degree" + id}
           autoComplete="off"
           classes="medium"
         />
         <Input
           type="text"
           label="Field of study: "
-          id="fieldOfStudy"
+          id={"fieldOfStudy" + id}
           autoComplete="off"
           classes="small"
         />
         <Input
           type="date"
           label="Start date: "
-          id="studyStartDate"
+          id={"studyStartDate" + id}
+          name="studyStartDate"
           autocomplete="off"
         />
         <Input
           type="date"
           label="End date: "
-          id="studyEndDate"
+          id={"studyEndDate" + id}
+          name="studyEndDate"
           autocomplete="off"
         />
         <Button classes="submit" label="Submit" onClick={handleSubmit} />
