@@ -1,9 +1,9 @@
 import Button from "./Button";
 import Input from "./Input";
-import "../styles/EducationForm.css";
-import { useId } from "react";
+import "../styles/ExperienceForm.css";
+import TextArea from "./TextArea";
 
-export default function EducationForm() {
+export default function ExperienceForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Submit button clicked!");
@@ -16,38 +16,36 @@ export default function EducationForm() {
 
   return (
     <>
-      <form id="education">
+      <form id="experience">
         <Input
           type="text"
-          label="School: "
-          id=""
+          label="Job Title: "
+          id="jobTitle"
           autoComplete="off"
           classes="medium"
         />
         <Input
           type="text"
-          label="Degree: "
-          id="degree"
+          label="Employer: "
+          id="employer"
           autoComplete="off"
           classes="medium"
         />
-        <Input
-          type="text"
-          label="Field of study: "
-          id="fieldOfStudy"
+        <TextArea
+          label="Main responsibilities: "
+          id="responsibilities"
           autoComplete="off"
-          classes="small"
         />
         <Input
           type="date"
           label="Start date: "
-          id="studyStartDate"
+          id="jobStartDate"
           autocomplete="off"
         />
         <Input
           type="date"
           label="End date: "
-          id="studyEndDate"
+          id="JobEndDate"
           autocomplete="off"
         />
         <Button classes="submit" label="Submit" onClick={handleSubmit} />

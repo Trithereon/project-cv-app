@@ -1,6 +1,6 @@
 # Project: CV Application
 
-## from The Odin Project
+from The Odin Project
 
 ## Assignment
 

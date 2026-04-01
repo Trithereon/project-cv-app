@@ -37,8 +37,8 @@ export default function ContactInfoForm({}) {
           autoComplete="tel"
           classes="small"
         />
-        <Button label="Submit" onClick={handleSubmit} />
-        <Button label="Edit" onClick={handleEdit} />
+        <Button classes="submit" label="Submit" onClick={handleSubmit} />
+        <Button classes="edit" label="Edit" onClick={handleEdit} />
       </form>
     </>
   );
