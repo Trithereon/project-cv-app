@@ -1,3 +1,31 @@
+:root {
+  interpolate-size: allow-keywords;
+}
+
+.accordion {
+  border: 1px solid #bbb;
+  border-radius: 8px;
+
+  summary {
+    color: black;
+    background-color: #eee;
+    padding: 16px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  form {
+    padding: 16px;
+  }
+
+  summary,
+  label {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ and Edge */
+    user-select: none;
+  }
+}
+
 .small {
   max-width: 110px;
 }

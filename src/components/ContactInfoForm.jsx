@@ -1,7 +1,8 @@
 import Button from "./Button";
 import Input from "./Input";
 import "../styles/ContactInfoForm.css";
-import { useId } from "react";
+import { useState, useId } from "react";
+import Accordion from "./Accordion";
 
 export default function ContactInfoForm({ contactInfo, onChange }) {
   const [editMode, setEditMode] = useState(true);
@@ -23,7 +24,7 @@ export default function ContactInfoForm({ contactInfo, onChange }) {
   };
 
   return (
-    <>
+    <Accordion title="Contact Info">
       <form id="contactInfo">
         <Input
           type="text"
@@ -58,6 +59,6 @@ export default function ContactInfoForm({ contactInfo, onChange }) {
         <Button classes="submit" label="Submit" onClick={handleSubmit} />
         <Button classes="edit" label="Edit" onClick={handleEdit} />
       </form>
-    </>
+    </Accordion>
   );
 }
