@@ -5,6 +5,7 @@ export default function TextArea({
   classes,
   name,
   onChange,
+  value,
 }) {
   return (
     <div>
@@ -16,6 +17,7 @@ export default function TextArea({
         name={name}
         className={classes}
         onChange={onChange}
+        value={value}
       />
     </div>
   );

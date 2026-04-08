@@ -35,6 +35,16 @@ export default function ExperienceForm({ experience, onChange, onDelete }) {
         value={experience.employer}
         onChange={handleChange}
       />
+      <Input
+        type="text"
+        label="Location: "
+        id={"location" + id}
+        name="location"
+        autoComplete="off"
+        classes="medium"
+        value={experience.location}
+        onChange={handleChange}
+      />
       <TextArea
         label="Main responsibilities: "
         id={"responsibilities" + id}

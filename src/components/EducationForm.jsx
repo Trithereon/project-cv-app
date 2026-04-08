@@ -40,8 +40,18 @@ export default function EducationForm({ education, onChange, onDelete }) {
         id={"fieldOfStudy" + id}
         name="field"
         autoComplete="off"
-        classes="small"
+        classes="medium"
         value={education.field}
+        onChange={handleChange}
+      />
+      <Input
+        type="text"
+        label="Location: "
+        id={"location" + id}
+        name="location"
+        autoComplete="off"
+        classes="medium"
+        value={education.location}
         onChange={handleChange}
       />
       <Input

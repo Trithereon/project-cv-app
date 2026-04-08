@@ -1,0 +1,7 @@
+/* TODO: Format like a paper resume. */
+
+#preview {
+  p {
+    white-space: pre-line; /* Preserves line breaks from input */
+  }
+}
