@@ -3,17 +3,14 @@ form {
   justify-items: center;
   text-align: left;
   gap: 10px;
+  background: #ffffda;
 
   div {
     grid-column: 1/3;
   }
 
-  button.submit {
-    grid-column: 1/2;
-    justify-self: right;
-  }
+  button.submit,
   button.edit {
-    grid-column: 2/3;
-    justify-self: left;
+    grid-column: 1/3;
   }
 }

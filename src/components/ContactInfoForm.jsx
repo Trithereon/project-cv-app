@@ -1,8 +1,8 @@
+import Accordion from "./Accordion";
 import Button from "./Button";
 import Input from "./Input";
 import "../styles/ContactInfoForm.css";
 import { useState, useId } from "react";
-import Accordion from "./Accordion";
 
 export default function ContactInfoForm({ contactInfo, onChange }) {
   const [editMode, setEditMode] = useState(true);
@@ -15,7 +15,7 @@ export default function ContactInfoForm({ contactInfo, onChange }) {
 
   const handleEdit = (e) => {
     e.preventDefault();
-    console.log("Edit button clicked!");
+    setEditMode(true);
   };
 
   const handleChange = (e) => {
@@ -31,7 +31,7 @@ export default function ContactInfoForm({ contactInfo, onChange }) {
           label="Name: "
           id={"name" + id}
           name="name"
-          autoComplete="name"
+          autoComplete="off"
           classes="medium"
           value={contactInfo.name}
           onChange={handleChange}
@@ -41,7 +41,7 @@ export default function ContactInfoForm({ contactInfo, onChange }) {
           label="Email: "
           id={"email" + id}
           name="email"
-          autoComplete="email"
+          autoComplete="off"
           classes="large"
           value={contactInfo.email}
           onChange={handleChange}
@@ -51,13 +51,16 @@ export default function ContactInfoForm({ contactInfo, onChange }) {
           label="Phone number: "
           id={"phone" + id}
           name="phone"
-          autoComplete="tel"
+          autoComplete="off"
           classes="small"
           value={contactInfo.phone}
           onChange={handleChange}
         />
-        <Button classes="submit" label="Submit" onClick={handleSubmit} />
-        <Button classes="edit" label="Edit" onClick={handleEdit} />
+        <Button
+          classes={editMode ? "submit" : "edit"}
+          label={editMode ? "Submit" : "Edit"}
+          onClick={editMode ? handleSubmit : handleEdit}
+        />
       </form>
     </Accordion>
   );
