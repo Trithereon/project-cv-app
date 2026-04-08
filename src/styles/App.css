@@ -3,14 +3,13 @@ form {
   justify-items: center;
   text-align: left;
   gap: 10px;
-  background: #ffffda;
+  background: #eeeeee;
 
   div {
     grid-column: 1/3;
   }
 
-  button.submit,
-  button.edit {
+  button {
     grid-column: 1/3;
   }
 }

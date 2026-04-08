@@ -5,6 +5,7 @@ import EducationForm from "./components/EducationForm";
 import ExperienceForm from "./components/ExperienceForm";
 import FormSection from "./components/FormSection";
 import Accordion from "./components/Accordion";
+import Button from "./components/Button";
 
 function App() {
   const [data, setData] = useState({
@@ -59,6 +60,15 @@ function App() {
     });
   };
 
+  const deleteEducationData = (id) => {
+    setData((prevData) => {
+      return {
+        ...prevData,
+        education: prevData.education.filter((form) => form.id !== id),
+      };
+    });
+  };
+
   const addExperienceData = () => {
     setData((prevData) => {
       return {
@@ -100,10 +110,12 @@ function App() {
 
   return (
     <>
-      <ContactInfoForm
-        contactInfo={data.contactInfo}
-        onChange={updateContactInfo}
-      />
+      <Accordion title="Contact Info">
+        <ContactInfoForm
+          contactInfo={data.contactInfo}
+          onChange={updateContactInfo}
+        />
+      </Accordion>
       <br />
       <Accordion title="Education" onAddForm={addEducationData}>
         {data.education.map((form) => (
@@ -113,11 +125,12 @@ function App() {
             onChange={(field, value) =>
               updateEducationData(form.id, field, value)
             }
+            onDelete={() => deleteEducationData(form.id)}
           />
         ))}
       </Accordion>
       <br />
-      <FormSection title="Work Experience" addForm={addExperienceData}>
+      <Accordion title="Work Experience" onAddForm={addExperienceData}>
         {data.experience.map((form) => (
           <ExperienceForm
             key={form.id}
@@ -125,9 +138,10 @@ function App() {
             onChange={(field, value) =>
               updateExperienceData(form.id, field, value)
             }
+            onDelete={() => deleteExperienceData(form.id)}
           />
         ))}
-      </FormSection>
+      </Accordion>
     </>
   );
 }

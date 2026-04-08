@@ -4,19 +4,9 @@ import Input from "./Input";
 import "../styles/EducationForm.css";
 import { useId, useState } from "react";
 
-export default function EducationForm({ education, onChange }) {
-  const [editMode, setEditMode] = useState(true);
+export default function EducationForm({ education, onChange, onDelete }) {
   const id = useId();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setEditMode(false);
-  };
-
-  const handleEdit = (e) => {
-    e.preventDefault();
-    setEditMode(true);
-  };
   const handleChange = (e) => {
     const { name, value } = e.target; // pulls e.target.name and e.target.value
     onChange(name, value);
@@ -72,11 +62,7 @@ export default function EducationForm({ education, onChange }) {
         value={education.endDate}
         onChange={handleChange}
       />
-      <Button
-        classes={editMode ? "submit" : "edit"}
-        label={editMode ? "Submit" : "Edit"}
-        onClick={editMode ? handleSubmit : handleEdit}
-      />
+      <Button classes="delete" label="Delete Entry" onClick={onDelete} />
     </form>
   );
 }

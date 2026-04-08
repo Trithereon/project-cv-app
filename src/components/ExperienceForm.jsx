@@ -5,19 +5,8 @@ import TextArea from "./TextArea";
 import "../styles/ExperienceForm.css";
 import { useId, useState } from "react";
 
-export default function ExperienceForm({ experience, onChange }) {
-  const [editMode, setEditMode] = useState(true);
+export default function ExperienceForm({ experience, onChange, onDelete }) {
   const id = useId();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setEditMode(false);
-  };
-
-  const handleEdit = (e) => {
-    e.preventDefault();
-    setEditMode(true);
-  };
 
   const handleChange = (e) => {
     const { name, value } = e.target; // pulls e.target.name and e.target.value
@@ -33,6 +22,7 @@ export default function ExperienceForm({ experience, onChange }) {
         name="jobTitle"
         autoComplete="off"
         classes="medium"
+        value={experience.jobTitle}
         onChange={handleChange}
       />
       <Input
@@ -42,6 +32,7 @@ export default function ExperienceForm({ experience, onChange }) {
         name="employer"
         autoComplete="off"
         classes="medium"
+        value={experience.employer}
         onChange={handleChange}
       />
       <TextArea
@@ -49,6 +40,7 @@ export default function ExperienceForm({ experience, onChange }) {
         id={"responsibilities" + id}
         name="responsibilities"
         autoComplete="off"
+        value={experience.responsibilities}
         onChange={handleChange}
       />
       <Input
@@ -57,6 +49,7 @@ export default function ExperienceForm({ experience, onChange }) {
         id={"jobStartDate" + id}
         name="startDate"
         autocomplete="off"
+        value={experience.startDate}
         onChange={handleChange}
       />
       <Input
@@ -65,13 +58,10 @@ export default function ExperienceForm({ experience, onChange }) {
         id={"JobEndDate" + id}
         name="endDate"
         autocomplete="off"
+        value={experience.endDate}
         onChange={handleChange}
       />
-      <Button
-        classes={editMode ? "submit" : "edit"}
-        label={editMode ? "Submit" : "Edit"}
-        onClick={editMode ? handleSubmit : handleEdit}
-      />
+      <Button classes="delete" label="Delete Entry" onClick={onDelete} />
     </form>
   );
 }
