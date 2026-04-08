@@ -5,6 +5,8 @@ import "../styles/accordion.css";
 export default function Accordion({ title, icon, children, onAddForm }) {
   const [editMode, setEditMode] = useState(true);
 
+  /* TODO: Make submit/edit buttons toggle disabled state of inputs */
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setEditMode(false);
