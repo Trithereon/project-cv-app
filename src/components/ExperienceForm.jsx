@@ -2,7 +2,7 @@ import Accordion from "./Accordion";
 import Button from "./Button";
 import Input from "./Input";
 import TextArea from "./TextArea";
-import "../styles/ExperienceForm.css";
+import "../styles/form.css";
 import { useId, useState } from "react";
 
 export default function ExperienceForm({ experience, onChange, onDelete }) {

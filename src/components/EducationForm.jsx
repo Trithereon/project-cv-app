@@ -1,7 +1,7 @@
 import Accordion from "./Accordion";
 import Button from "./Button";
 import Input from "./Input";
-import "../styles/EducationForm.css";
+import "../styles/form.css";
 import { useId, useState } from "react";
 
 export default function EducationForm({ education, onChange, onDelete }) {

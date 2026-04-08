@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./styles/App.css";
+import "./styles/app.css";
 import ContactInfoForm from "./components/ContactInfoForm";
 import EducationForm from "./components/EducationForm";
 import ExperienceForm from "./components/ExperienceForm";
@@ -14,8 +14,26 @@ function App() {
       email: "",
       phone: "",
     },
-    education: [],
-    experience: [],
+    education: [
+      {
+        id: crypto.randomUUID(),
+        school: "",
+        degree: "",
+        field: "",
+        startDate: "",
+        endDate: "",
+      },
+    ],
+    experience: [
+      {
+        id: crypto.randomUUID(),
+        jobTitle: "",
+        employer: "",
+        responsibilities: "",
+        startDate: "",
+        endDate: "",
+      },
+    ],
   });
 
   const updateContactInfo = (field, value) => {

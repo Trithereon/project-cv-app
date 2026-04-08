@@ -1,6 +1,6 @@
 import Button from "./Button";
 import { useState } from "react";
-import "../styles/Accordion.css";
+import "../styles/accordion.css";
 
 export default function Accordion({ title, icon, children, onAddForm }) {
   const [editMode, setEditMode] = useState(true);

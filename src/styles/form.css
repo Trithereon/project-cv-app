@@ -21,7 +21,7 @@
   summary,
   label {
     -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10+ and Edge */
+    -ms-user-select: none; /* Edge */
     user-select: none;
   }
 }
@@ -36,4 +36,9 @@
 
 .large {
   min-width: 240px;
+}
+
+textarea {
+  min-width: 270px;
+  min-height: 100px;
 }

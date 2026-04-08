@@ -1,7 +1,7 @@
 import Accordion from "./Accordion";
 import Button from "./Button";
 import Input from "./Input";
-import "../styles/ContactInfoForm.css";
+import "../styles/form.css";
 import { useState, useId } from "react";
 
 export default function ContactInfoForm({ contactInfo, onChange }) {
