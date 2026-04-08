@@ -1,5 +1,6 @@
 import Button from "./Button";
 import { useState } from "react";
+import "../styles/Accordion.css";
 
 export default function Accordion({ title, icon, children, onAddForm }) {
   const [editMode, setEditMode] = useState(true);
@@ -16,7 +17,10 @@ export default function Accordion({ title, icon, children, onAddForm }) {
 
   return (
     <details className="accordion" open>
-      <summary>{title}</summary>
+      <summary>
+        {title}
+        {icon}
+      </summary>
       {children}
       <Button
         classes={editMode ? "submit" : "edit"}

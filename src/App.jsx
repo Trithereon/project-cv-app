@@ -3,9 +3,9 @@ import "./styles/App.css";
 import ContactInfoForm from "./components/ContactInfoForm";
 import EducationForm from "./components/EducationForm";
 import ExperienceForm from "./components/ExperienceForm";
-import FormSection from "./components/FormSection";
 import Accordion from "./components/Accordion";
 import Button from "./components/Button";
+import { FaAddressCard, FaGraduationCap, FaBriefcase } from "react-icons/fa6";
 
 function App() {
   const [data, setData] = useState({
@@ -110,14 +110,18 @@ function App() {
 
   return (
     <>
-      <Accordion title="Contact Info">
+      <Accordion title="Contact Info" icon={<FaAddressCard />}>
         <ContactInfoForm
           contactInfo={data.contactInfo}
           onChange={updateContactInfo}
         />
       </Accordion>
       <br />
-      <Accordion title="Education" onAddForm={addEducationData}>
+      <Accordion
+        title="Education"
+        icon={<FaGraduationCap />}
+        onAddForm={addEducationData}
+      >
         {data.education.map((form) => (
           <EducationForm
             key={form.id}
@@ -130,7 +134,11 @@ function App() {
         ))}
       </Accordion>
       <br />
-      <Accordion title="Work Experience" onAddForm={addExperienceData}>
+      <Accordion
+        title="Work Experience"
+        icon={<FaBriefcase />}
+        onAddForm={addExperienceData}
+      >
         {data.experience.map((form) => (
           <ExperienceForm
             key={form.id}
