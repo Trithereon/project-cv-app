@@ -7,7 +7,6 @@ export default function Input({
   classes,
   value,
   onChange,
-  disabled,
 }) {
   return (
     <div>
@@ -20,7 +19,6 @@ export default function Input({
         className={classes}
         value={value}
         onChange={onChange}
-        disabled={disabled}
       />
     </div>
   );

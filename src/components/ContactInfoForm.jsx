@@ -1,8 +1,6 @@
-import Accordion from "./Accordion";
-import Button from "./Button";
 import Input from "./Input";
 import "../styles/form.css";
-import { useState, useId } from "react";
+import { useId } from "react";
 
 export default function ContactInfoForm({ contactInfo, onChange, editMode }) {
   const id = useId();
@@ -14,39 +12,38 @@ export default function ContactInfoForm({ contactInfo, onChange, editMode }) {
 
   return (
     <form id="contactInfo">
-      <Input
-        type="text"
-        label="Name: "
-        id={"name" + id}
-        name="name"
-        autoComplete="off"
-        classes="medium"
-        value={contactInfo.name}
-        onChange={handleChange}
-        disabled={!editMode}
-      />
-      <Input
-        type="email"
-        label="Email: "
-        id={"email" + id}
-        name="email"
-        autoComplete="off"
-        classes="large"
-        value={contactInfo.email}
-        onChange={handleChange}
-        disabled={!editMode}
-      />
-      <Input
-        type="tel"
-        label="Phone number: "
-        id={"phone" + id}
-        name="phone"
-        autoComplete="off"
-        classes="small"
-        value={contactInfo.phone}
-        onChange={handleChange}
-        disabled={!editMode}
-      />
+      <fieldset disabled={!editMode}>
+        <Input
+          type="text"
+          label="Name: "
+          id={"name" + id}
+          name="name"
+          autoComplete="off"
+          classes="medium"
+          value={contactInfo.name}
+          onChange={handleChange}
+        />
+        <Input
+          type="email"
+          label="Email: "
+          id={"email" + id}
+          name="email"
+          autoComplete="off"
+          classes="large"
+          value={contactInfo.email}
+          onChange={handleChange}
+        />
+        <Input
+          type="tel"
+          label="Phone number: "
+          id={"phone" + id}
+          name="phone"
+          autoComplete="off"
+          classes="small"
+          value={contactInfo.phone}
+          onChange={handleChange}
+        />
+      </fieldset>
     </form>
   );
 }

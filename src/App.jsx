@@ -103,11 +103,28 @@ function App() {
     });
   };
 
+  const [editModes, setEditModes] = useState([true, true, true]);
+
+  const toggleEditMode = (index) => {
+    setEditModes((prev) => {
+      const updated = [...prev];
+      updated[index] = !updated[index];
+      return updated;
+    });
+  };
+
   return (
     <>
       <section id="forms">
-        <Accordion title="Contact Info" icon={<FaAddressCard />}>
+        <Accordion
+          index={0}
+          title="Contact Info"
+          icon={<FaAddressCard />}
+          editMode={editModes[0]}
+          onToggleEditMode={() => toggleEditMode(0)}
+        >
           <ContactInfoForm
+            editMode={editModes[0]}
             contactInfo={data.contactInfo}
             onChange={updateContactInfo}
           />
@@ -117,9 +134,12 @@ function App() {
           title="Education"
           icon={<FaGraduationCap />}
           onAddForm={addEducationData}
+          editMode={editModes[1]}
+          onToggleEditMode={() => toggleEditMode(1)}
         >
           {data.education.map((form) => (
             <EducationForm
+              editMode={editModes[1]}
               key={form.id}
               education={form}
               onChange={(field, value) =>
@@ -134,9 +154,12 @@ function App() {
           title="Work Experience"
           icon={<FaBriefcase />}
           onAddForm={addExperienceData}
+          editMode={editModes[2]}
+          onToggleEditMode={() => toggleEditMode(2)}
         >
           {data.experience.map((form) => (
             <ExperienceForm
+              editMode={editModes[2]}
               key={form.id}
               experience={form}
               onChange={(field, value) =>

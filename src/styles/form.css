@@ -3,13 +3,17 @@
 }
 
 section#forms {
-  min-width: 335px;
+  min-width: 360px;
   margin-top: 40px;
 }
 
 .accordion {
   border: 1px solid #bbb;
   border-radius: 8px;
+
+  button {
+    margin: 8px;
+  }
 
   summary {
     border-radius: 8px 8px 0 0;
@@ -24,19 +28,20 @@ section#forms {
   }
 
   form {
-    padding: 16px;
+    padding: 8px;
     display: grid;
     justify-items: center;
     text-align: left;
     gap: 10px;
     background: #eeeeee;
 
-    div {
-      grid-column: 1/2;
-    }
-
-    button {
-      grid-column: 1/2;
+    fieldset {
+      display: grid;
+      justify-items: center;
+      gap: 8px;
+      border-radius: 8px;
+      border: #bbb solid 1px;
+      margin: 0;
     }
   }
 

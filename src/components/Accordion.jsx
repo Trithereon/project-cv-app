@@ -1,32 +1,14 @@
 import Button from "./Button";
-import { useState } from "react";
 import "../styles/accordion.css";
 
-export default function Accordion({ title, icon, children, onAddForm }) {
-  const [editMode, setEditMode] = useState(true);
-
-  /* TODO: Make submit/edit buttons toggle disabled state of inputs */
-
-  /*
-    // Pass editMode to each child element
-      const childrenWithEditMode = React.Children.map(children, (child) => {
-        if (React.isValidElement(child)) {
-          return React.cloneElement(child, { editMode });
-        }
-        return child;
-      });
-  */
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setEditMode(false);
-  };
-
-  const handleEdit = (e) => {
-    e.preventDefault();
-    setEditMode(true);
-  };
-
+export default function Accordion({
+  title,
+  icon,
+  children,
+  onAddForm,
+  editMode,
+  onToggleEditMode,
+}) {
   return (
     <details className="accordion" open>
       <summary>
@@ -37,7 +19,7 @@ export default function Accordion({ title, icon, children, onAddForm }) {
       <Button
         classes={editMode ? "submit" : "edit"}
         label={editMode ? "Submit" : "Edit"}
-        onClick={editMode ? handleSubmit : handleEdit}
+        onClick={onToggleEditMode}
       />
       <Button
         style={
