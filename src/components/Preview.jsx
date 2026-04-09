@@ -13,14 +13,14 @@ function ContactInfo({ email, phone }) {
     <section>
       {phone === "" ? null : (
         <div>
-          <FaPhone />
+          <FaPhone size={"1.2em"} />
           {phone}
         </div>
       )}
 
       {email === "" ? null : (
         <div>
-          <FaEnvelope />
+          <FaEnvelope size={"1.2em"} />
           {email}
         </div>
       )}
@@ -92,7 +92,7 @@ function Experience({ experience }) {
 
 export default function Preview({ data }) {
   return (
-    <div>
+    <div className="page">
       <Name name={data.contactInfo.name} />
       <ContactInfo
         email={data.contactInfo.email}

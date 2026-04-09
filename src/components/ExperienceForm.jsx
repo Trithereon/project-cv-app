@@ -5,7 +5,12 @@ import TextArea from "./TextArea";
 import "../styles/form.css";
 import { useId, useState } from "react";
 
-export default function ExperienceForm({ experience, onChange, onDelete }) {
+export default function ExperienceForm({
+  experience,
+  onChange,
+  onDelete,
+  editMode,
+}) {
   const id = useId();
 
   const handleChange = (e) => {
@@ -24,6 +29,7 @@ export default function ExperienceForm({ experience, onChange, onDelete }) {
         classes="medium"
         value={experience.jobTitle}
         onChange={handleChange}
+        disabled={!editMode}
       />
       <Input
         type="text"
@@ -34,6 +40,7 @@ export default function ExperienceForm({ experience, onChange, onDelete }) {
         classes="medium"
         value={experience.employer}
         onChange={handleChange}
+        disabled={!editMode}
       />
       <Input
         type="text"
@@ -44,6 +51,7 @@ export default function ExperienceForm({ experience, onChange, onDelete }) {
         classes="medium"
         value={experience.location}
         onChange={handleChange}
+        disabled={!editMode}
       />
       <TextArea
         label="Main responsibilities: "
@@ -52,6 +60,7 @@ export default function ExperienceForm({ experience, onChange, onDelete }) {
         autoComplete="off"
         value={experience.responsibilities}
         onChange={handleChange}
+        disabled={!editMode}
       />
       <Input
         type="date"
@@ -61,6 +70,7 @@ export default function ExperienceForm({ experience, onChange, onDelete }) {
         autocomplete="off"
         value={experience.startDate}
         onChange={handleChange}
+        disabled={!editMode}
       />
       <Input
         type="date"
@@ -70,6 +80,7 @@ export default function ExperienceForm({ experience, onChange, onDelete }) {
         autocomplete="off"
         value={experience.endDate}
         onChange={handleChange}
+        disabled={!editMode}
       />
       <Button classes="delete" label="Delete Entry" onClick={onDelete} />
     </form>

@@ -7,6 +7,16 @@ export default function Accordion({ title, icon, children, onAddForm }) {
 
   /* TODO: Make submit/edit buttons toggle disabled state of inputs */
 
+  /*
+    // Pass editMode to each child element
+      const childrenWithEditMode = React.Children.map(children, (child) => {
+        if (React.isValidElement(child)) {
+          return React.cloneElement(child, { editMode });
+        }
+        return child;
+      });
+  */
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setEditMode(false);

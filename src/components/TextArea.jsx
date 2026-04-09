@@ -6,6 +6,7 @@ export default function TextArea({
   name,
   onChange,
   value,
+  disabled,
 }) {
   return (
     <div>
@@ -18,6 +19,7 @@ export default function TextArea({
         className={classes}
         onChange={onChange}
         value={value}
+        disabled={disabled}
       />
     </div>
   );

@@ -4,7 +4,7 @@ import Input from "./Input";
 import "../styles/form.css";
 import { useState, useId } from "react";
 
-export default function ContactInfoForm({ contactInfo, onChange }) {
+export default function ContactInfoForm({ contactInfo, onChange, editMode }) {
   const id = useId();
 
   const handleChange = (e) => {
@@ -23,6 +23,7 @@ export default function ContactInfoForm({ contactInfo, onChange }) {
         classes="medium"
         value={contactInfo.name}
         onChange={handleChange}
+        disabled={!editMode}
       />
       <Input
         type="email"
@@ -33,6 +34,7 @@ export default function ContactInfoForm({ contactInfo, onChange }) {
         classes="large"
         value={contactInfo.email}
         onChange={handleChange}
+        disabled={!editMode}
       />
       <Input
         type="tel"
@@ -43,6 +45,7 @@ export default function ContactInfoForm({ contactInfo, onChange }) {
         classes="small"
         value={contactInfo.phone}
         onChange={handleChange}
+        disabled={!editMode}
       />
     </form>
   );

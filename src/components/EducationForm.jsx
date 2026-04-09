@@ -4,7 +4,12 @@ import Input from "./Input";
 import "../styles/form.css";
 import { useId, useState } from "react";
 
-export default function EducationForm({ education, onChange, onDelete }) {
+export default function EducationForm({
+  education,
+  onChange,
+  onDelete,
+  editMode,
+}) {
   const id = useId();
 
   const handleChange = (e) => {
@@ -23,6 +28,7 @@ export default function EducationForm({ education, onChange, onDelete }) {
         classes="medium"
         value={education.school}
         onChange={handleChange}
+        disabled={!editMode}
       />
       <Input
         type="text"
@@ -33,6 +39,7 @@ export default function EducationForm({ education, onChange, onDelete }) {
         classes="medium"
         value={education.degree}
         onChange={handleChange}
+        disabled={!editMode}
       />
       <Input
         type="text"
@@ -43,6 +50,7 @@ export default function EducationForm({ education, onChange, onDelete }) {
         classes="medium"
         value={education.field}
         onChange={handleChange}
+        disabled={!editMode}
       />
       <Input
         type="text"
@@ -53,6 +61,7 @@ export default function EducationForm({ education, onChange, onDelete }) {
         classes="medium"
         value={education.location}
         onChange={handleChange}
+        disabled={!editMode}
       />
       <Input
         type="date"
@@ -62,6 +71,7 @@ export default function EducationForm({ education, onChange, onDelete }) {
         autocomplete="off"
         value={education.startDate}
         onChange={handleChange}
+        disabled={!editMode}
       />
       <Input
         type="date"
@@ -71,6 +81,7 @@ export default function EducationForm({ education, onChange, onDelete }) {
         autocomplete="off"
         value={education.endDate}
         onChange={handleChange}
+        disabled={!editMode}
       />
       <Button classes="delete" label="Delete Entry" onClick={onDelete} />
     </form>

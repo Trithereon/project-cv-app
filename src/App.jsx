@@ -147,6 +147,7 @@ function App() {
           ))}
         </Accordion>
       </section>
+
       <section id="preview">
         <Preview data={data} />
       </section>
